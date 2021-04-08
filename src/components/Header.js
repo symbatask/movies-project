@@ -9,10 +9,8 @@ const Header = () => {
                     <span className="header__logo">Films</span>
                     <nav className="header_nav">
                         <NavLink to="/" className="header_nav__link">Main</NavLink>
-                        <NavLink to="/" className="header_nav__link">Popular</NavLink>
-                        <NavLink to="/" className="header_nav__link">Top Rated</NavLink>
-                        <NavLink to="/" className="header_nav__link">Upcoming</NavLink>
-                        <NavLink to="/" className="header_nav__link">Now playing</NavLink>
+                        <NavLink to="/popular" className="header_nav__link">Popular</NavLink>
+                        <NavLink to="/nowplaying" className="header_nav__link">Now playing</NavLink>
                     </nav>
                 </div>
                 <div className="header__right">

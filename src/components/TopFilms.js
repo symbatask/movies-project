@@ -7,20 +7,23 @@ import axios from "axios";
 
 const TopFilms = () => {
     const [films, setFilms] = useState([])
-
     useEffect( () => {
-        axios("https://api.themoviedb.org/3/movie/top_rated?api_key=a684428f3a81d1239a0f0e37e400f243&language=en-US&page=1")
-            .then(obj => setFilms(obj.data.results.filter((el, idx) => idx < 20)))
-        console.log()
+        getData()
+        getData()
     }, [])
 
+    const getData = () => {
+        axios("https://api.themoviedb.org/3/movie/top_rated?api_key=a684428f3a81d1239a0f0e37e400f243&language=en-US&page=1")
+            .then(obj => setFilms(obj.data.results.filter((el, idx) => idx < 20)))
+    }
 
     return (
         <div className="top">
             <div className="top__container container">
-                <OwlCarousel items="6" loop="true" margin={20}>
+                <h3 className="text-center text-4xl mb-3">Top 20 films</h3>
+                <OwlCarousel items="6" loop="true" margin={20} autoplay={true} autoplayTimeout={2000}>
                     {films.map(film => (
-                        <TopCard film={film}/>
+                        <TopCard film={film} key={film.id}/>
                     ))}
                 </OwlCarousel>
             </div>
