@@ -10,7 +10,7 @@ const FilmsList = ({films, title}) => {
                 <div className="films__list">
                     {
                         films.map(el => (
-                            <Film img={el?.poster_path} release={el?.release_date} title={el.title} vote={el.vote_average}/>
+                            <Film id={el.id} img={el?.poster_path} release={el?.release_date} title={el.title} vote={el.vote_average}/>
                         ))
                     }
                 </div>

@@ -3,11 +3,15 @@ import './App.css';
 import Main from "./pages/Main";
 
 function App() {
-  return (
-    <div className="App">
-      <Main />
-    </div>
-  );
+    const handleClick = () => {
+        document.querySelector(".search_active").style.display = "none"
+        document.querySelector("#inp").value = ''
+    }
+    return (
+        <div className="App" onClick={handleClick}>
+            <Main/>
+        </div>
+    );
 }
 
 export default App;

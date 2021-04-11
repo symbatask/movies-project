@@ -1,21 +1,22 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import Header from "../components/Header";
-import TopFilms from "../components/TopFilms";
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Popular from "./Popular";
 import TopRated from "./TopRated";
 import NowPlaying from "./NowPlaying";
+import FilmDetails from "../components/FilmDetails";
 
 const Main = () => {
 
+
     return (
-            <Router>
+            <Router className="background" >
                 <Header/>
-                <TopFilms />
                 <Switch>
                     <Route exact path="/" component={TopRated}/>
-                    <Route exact path="/popular" component={Popular}/>
-                    <Route exact path="/nowplaying" component={NowPlaying}/>
+                    <Route path="/popular" component={Popular}/>
+                    <Route path="/nowplaying" component={NowPlaying}/>
+                    <Route path="/film/:id" component={FilmDetails}/>
                 </Switch>
             </Router>
     );
