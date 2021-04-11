@@ -1,5 +1,5 @@
 .container {
-    max-width: 930px;
+    max-width: 880px;
     width: 100%;
     padding: 0 15px;
     margin: 0 auto;
@@ -107,7 +107,7 @@
 
 .films__list {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     grid-column-gap: 30px;
     grid-row-gap: 20px;
 }

@@ -9,14 +9,15 @@ import Video from "./Video";
 const FilmDetails = () => {
 
     const {id} = useParams()
-    const [films,setFilms] = useState([])
+    const [films,setFilms] = useState({})
 
     useEffect(() => {
         axios(`https://api.themoviedb.org/3/movie/${id}?api_key=a684428f3a81d1239a0f0e37e400f243&language=en-US`)
             .then(res => {
+                console.log(typeof res.data)
                 setFilms(res.data)
             })
-    }, id)
+    }, [id])
 
     return (
         <div>
@@ -49,9 +50,7 @@ const FilmDetails = () => {
                          <span
                              className="bg-gray-800 p-1 my-1 ml-1 text-white inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">{`original language: ${films.original_language}`}</span>
                      </div>
-                     <ErrorBoundary>
-                        <Video/>
-                     </ErrorBoundary>
+                     <Video />
                  </div>
              </div>
          </div>
