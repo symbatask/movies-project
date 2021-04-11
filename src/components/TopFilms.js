@@ -4,6 +4,7 @@ import 'owl.carousel/dist/assets/owl.carousel.min.css'
 import 'owl.carousel/dist/assets/owl.theme.default.min.css'
 import TopCard from "./TopCard";
 import axios from "axios";
+import Spinner from "./Spinner";
 
 const TopFilms = () => {
     const [films, setFilms] = useState([])
@@ -16,17 +17,15 @@ const TopFilms = () => {
                 setIsLoading(false)
             })
     }, [])
-
+    if (isLoading) return <Spinner/>
     return (
         <div className="top">
             <div className="top__container container">
-                {!isLoading &&
                 <OwlCarousel items="5" loop="true" margin={20} autoplay={true} autoplayTimeout={3000} >
                     {films.map(film => (
                         <TopCard film={film} key={film.id}/>
                     ))}
                 </OwlCarousel>
-                }
             </div>
         </div>
     )
