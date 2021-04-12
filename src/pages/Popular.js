@@ -25,7 +25,7 @@ const Popular = () => {
     useEffect(()=> {
         axios(`https://api.themoviedb.org/3/movie/top_rated?api_key=a684428f3a81d1239a0f0e37e400f243&language=en-US&page=${page}`)
             .then(obj => {
-                setFilms(obj.data.results.filter(film => film.id !== 19404))
+                setFilms(obj.data.results)
                 setTotalPages(obj.data.total_pages)
             })
     },[page])

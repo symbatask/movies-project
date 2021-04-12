@@ -44,9 +44,20 @@
 }
 
 
+.header_nav {
+    display: flex;
+    height: 72px;
+    align-items: center;
+}
+
 
 .header_nav__link {
-    margin-right: 15px;
+    width: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
 }
 
 .top {
@@ -118,5 +129,21 @@
 
 .film__img-small {
     box-shadow: 0 0 20px black;
+}
+
+.actor__img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #8c8c8c;
+}
+
+.selected {
+    background-color: #262626;
+}
+
+.lg_inp_search {
+    width: 80%;
 }
 

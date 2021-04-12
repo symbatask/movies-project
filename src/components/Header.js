@@ -30,7 +30,7 @@ const Header = () => {
         let search = document.querySelector(".search_active")
         if (e.key === 'Enter' && e.target.value.length > 3) {
             search.style.display = "none"
-            window.location.href = `/film/${films[0].id}`
+            window.location.href = `/search/${e.target.value}`
             setSearchValue("")
         }
     }
@@ -41,9 +41,9 @@ const Header = () => {
                 <div className="header__left">
                     <NavLink to="/" className="header__logo">Films</NavLink>
                     <nav className="header_nav">
-                        <NavLink to="/" className="header_nav__link">Main</NavLink>
-                        <NavLink to="/popular" className="header_nav__link">Popular</NavLink>
-                        <NavLink to="/nowplaying" className="header_nav__link">Now playing</NavLink>
+                        <NavLink exact activeClassName="selected" to="/" className="header_nav__link">Main</NavLink>
+                        <NavLink to="/popular" activeClassName="selected" className="header_nav__link">Popular</NavLink>
+                        <NavLink to="/nowplaying" activeClassName="selected" className="header_nav__link">Now playing</NavLink>
                     </nav>
                 </div>
                 <div className="header__right">
