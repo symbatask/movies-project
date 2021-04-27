@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
+
 const Film = ({img, release, title, vote, id}) => {
     return (
         <Link to={`/film/${id}`} className="max-w-xs rounded film__img-small my-2 film_card bg-gray-900 flex flex-col justify-between">

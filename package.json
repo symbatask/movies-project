@@ -16,7 +16,7 @@
     "web-vitals": "^1.1.1"
   },
   "scripts": {
-    "run" : "craco start",
+    "run": "craco start",
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
